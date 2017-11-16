@@ -1,0 +1,18 @@
+language: go
+go:
+- 1.8.x
+before_deploy: 
+  - "echo 'Pre deployment to Heroku'"
+  - "npm install -g @angular/cli"
+  - "go get -u -v github.com/go-task/task/cmd/task"
+  - "task build-ui-travis"
+deploy:
+  provider: heroku
+  api_key:
+    secure: GgLyvLbrtdui7NPklCw/fMnEXwFw9zAisowTfYCQpYr16EhCIGfui76LqC4lwV6x9g1FnyJiwvLHHlxj9kafEW0NC+5iB34D6zlhu5pnZgPA0IiokMw/Sef8xVues9Kku1F5AlbncpP9wbjAbFcngOwGtjiA8lhTeKeYvHNE0IZxnQ9zIEi7ZBe2W7zRBJdpga1xXLaRXAWWcPENc/kr2Km9WqpC0mlp0DseS3sX1ysmQO+/FDKxK9sRyXeskf6oNR4AL83Qm9Nl4Mw/C7mG3wn0b1jM6OqRUe3IGnvu9a/1VzGvfedkrfhiUBEKrSMtgdQho/xXV9sIE7luTqiYMbHzPLBPVc+TUVgdwAHIM9PMVc+24+wPn0At2MBJsZyvEGHvcHapOS8B4wxbkk5vqS4vcBVO28Q+aEKspEj5IPCWzQjkgjnsKXgy1b33vvRWtiwxnM9tzCAj5tOekXL5ABvGXuemZrE2pv49ecx2aJCbvXaK70fNz20Rb1kF3QPNYG+SZdzYGWMA9bzieOMjepo6+KeZ7tKlOzSYHduJWMF+EwIK3Fi/4vhKHPbx0c8bwxV386LYQWdP+S1P11rc7hAI1b02FruWe1JkBKCZbSitwCU9uL+IaYmc6MVOD2kWMPmUUoBghTkTnb6d7y/HNGd3C6Y6/vAyrXRLemEA3C8=
+  app: herobio
+  on:
+    repo: nikhosagala/herobio
+  skip_cleanup: true
+notifications:
+  email: false

@@ -1,0 +1,12 @@
+# editor ignore
+.vscode/*
+
+# go ignore
+*.exe
+*.test
+vendor
+
+# angular ignore
+dist
+node_modules
+public

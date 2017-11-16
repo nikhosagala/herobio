@@ -1,0 +1,9 @@
+# github.com/go-task/task
+
+build-ui:
+  cmds:
+    - cd frontend && npm run build-ui
+
+build-ui-travis:
+  cmds:
+    - cd frontend && npm install && npm run build-ui
