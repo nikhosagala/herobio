@@ -20,9 +20,8 @@ func Seed() {
 		os.Exit(1)
 	}
 
-	var hero models.Hero
-
 	for _, file := range files {
+		var hero models.Hero
 		fmt.Printf("# Reading file %s\n", file.Name())
 		path := filePath + "/" + file.Name()
 		content, err := ioutil.ReadFile(path)

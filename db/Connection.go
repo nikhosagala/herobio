@@ -31,6 +31,8 @@ func CreateConnection() *gorm.DB {
 
 	Migrate()
 
+	Seed()
+
 	return db
 }
 

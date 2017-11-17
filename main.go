@@ -11,8 +11,6 @@ import (
 func main() {
 	db.CreateConnection()
 
-	db.Seed()
-
 	defer db.CloseConnection()
 
 	conf.InitializeEngine()

@@ -2,7 +2,7 @@ package models
 
 // Hero model
 type Hero struct {
-	ID          int    `json:"id" gorm:"AUTO_INCREMENT"`
+	ID          uint   `json:"id" gorm:"primary_key"`
 	Name        string `json:"name"`
 	Born        string `json:"born"`
 	Death       string `json:"death"`
