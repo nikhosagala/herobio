@@ -1,24 +1,35 @@
 package conf
 
 import (
+	"github.com/gin-contrib/cors"
+	"github.com/gin-contrib/gzip"
 	"github.com/gin-contrib/static"
 	"github.com/gin-gonic/gin"
 	"github.com/nikhosagala/herobio/controllers"
-	"github.com/nikhosagala/herobio/utils"
 )
 
 var router *gin.Engine
 
-// InitializeRoutes for App
-func InitializeRoutes() {
+// InitializeEngine is function to contruct Gin engine
+func InitializeEngine() {
 
 	router = gin.Default()
 
-	router.Use(utils.CORSMiddleware())
+	config := cors.DefaultConfig()
+
+	config.AllowOrigins = []string{"https://herobio.herokuapp.com/"}
+
+	router.Use(cors.New(config))
+
+	router.Use(gzip.Gzip(gzip.BestCompression))
 
 	router.Use(static.Serve("/", static.LocalFile("public", true)))
+}
 
-	router.GET("/api/ping", controllers.Pong)
+// InitializeRoutes function to define routing
+func InitializeRoutes() {
+
+	router.GET("/api/ping", controllers.Index)
 
 	router.GET("/api/heroes", controllers.GetHeroes)
 
@@ -27,12 +38,12 @@ func InitializeRoutes() {
 	router.NoRoute(controllers.NotFound)
 }
 
-// Router ...
+// Router return Gin engine
 func Router() *gin.Engine {
 	return router
 }
 
-// Run ...
+// Run function to run Gin engine
 func Run() {
 	router.Run()
 }

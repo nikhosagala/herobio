@@ -1,6 +1,6 @@
 package models
 
-// Hero ...
+// Hero model
 type Hero struct {
 	ID          int    `json:"id" gorm:"AUTO_INCREMENT"`
 	Name        string `json:"name"`

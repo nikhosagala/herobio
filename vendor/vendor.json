@@ -1,7 +1,22 @@
 {
 	"comment": "",
+	"heroku": {
+		"goVersion": "go1.8"
+	},
 	"ignore": "test",
 	"package": [
+		{
+			"checksumSHA1": "uGee8UTKbrc4ClSctv+SBv0RZF4=",
+			"path": "github.com/gin-contrib/cors",
+			"revision": "51f0ef8b07e973afb8b6c192bf90d5c3e575c01a",
+			"revisionTime": "2017-09-17T02:20:32Z"
+		},
+		{
+			"checksumSHA1": "hzDy5btm3sEh6+2YT7Mp+5UW2cU=",
+			"path": "github.com/gin-contrib/gzip",
+			"revision": "ce345a8285089c0917000e9ce23e6768a60ad7bc",
+			"revisionTime": "2017-11-01T06:48:11Z"
+		},
 		{
 			"checksumSHA1": "BhMowD2DIKSd9qq8Pzh7Y3mh2/w=",
 			"path": "github.com/gin-contrib/sse",
@@ -111,8 +126,5 @@
 			"revisionTime": "2017-08-12T16:00:11Z"
 		}
 	],
-	"rootPath": "github.com/nikhosagala/herobio",
-	"heroku": {
-		"goVersion": "go1.8"
-	}
+	"rootPath": "github.com/nikhosagala/herobio"
 }

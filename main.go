@@ -15,6 +15,8 @@ func main() {
 
 	defer db.CloseConnection()
 
+	conf.InitializeEngine()
+
 	conf.InitializeRoutes()
 
 	conf.Run() // listen and serve on 0.0.0.0:8080

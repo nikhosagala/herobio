@@ -2,15 +2,9 @@
 <mat-toolbar color="primary">
     <span>Herobio</span>
 </mat-toolbar>
-<mat-card class="card" *ngFor="let hero of heroes">
-    <mat-card-header>
-        <div mat-card-avatar class="card-header"></div>
-        <mat-card-title>{{hero.name}}</mat-card-title>
-        <mat-card-subtitle>{{hero.province}}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image src="{{hero.imageUrl}}" alt="Photo of a {{hero.name}}">
-    <mat-card-content>
-        {{hero.description}}
-    </mat-card-content>
-</mat-card>
+<div class="row">
+    <div class="col l3 m12 s12" *ngFor="let hero of heroes">
+        <card [hero]="hero"></card>
+    </div>
+</div>
 <router-outlet></router-outlet>

@@ -6,14 +6,14 @@ import (
 	"github.com/nikhosagala/herobio/utils"
 )
 
-// GetHeroes ...
+// GetHeroes function to return all Heroes with query limit and offset
 func GetHeroes(c *gin.Context) {
 	limit, offset := utils.LimitAndOffset(c.Query("limit"), c.Query("offset"))
 	payload = utils.Success(limit, offset, db.GetAllHero(limit, offset))
 	utils.Render(c, payload)
 }
 
-// GetHero ...
+// GetHero function to return Hero by id Hero
 func GetHero(c *gin.Context) {
 	limit, offset := utils.LimitAndOffset(c.Query("limit"), c.Query("offset"))
 	id := utils.ParseParam2Int(c.Param("id"))

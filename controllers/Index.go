@@ -10,21 +10,14 @@ import (
 
 var payload gin.H
 
-// Index to return
+// Index to return 
 func Index(c *gin.Context) {
 	utils.Render(c, gin.H{
 		"payload": models.Response{Code: http.StatusOK, Data: "API Running"},
 	})
 }
 
-// Pong function
-func Pong(c *gin.Context) {
-	utils.Render(c, gin.H{
-		"payload": models.Response{Code: http.StatusOK, Data: "API Running"},
-	})
-}
-
-// NotFound ...
+// NotFound is function to return if routes not found
 func NotFound(c *gin.Context) {
 	utils.Render(c, gin.H{
 		"payload": models.Response{Code: http.StatusNotFound, Data: []models.Response{}, Error: "Not found"},

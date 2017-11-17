@@ -9,7 +9,7 @@ import (
 	"github.com/nikhosagala/herobio/models"
 )
 
-// Seed ...
+// Seed use to generate data from hero folder
 func Seed() {
 	filePath := "./hero"
 

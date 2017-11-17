@@ -2,8 +2,8 @@
 
 build-ui:
   cmds:
-    - cd frontend && npm run build-ui
+    - cd frontend && npm run build
 
 build-ui-travis:
   cmds:
-    - cd frontend && npm install && npm run build-ui
+    - cd frontend && npm install && npm run build

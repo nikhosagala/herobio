@@ -7,10 +7,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule, MatCardModule } from '@angular/material';
 import { MaterializeModule } from 'ng2-materialize';
 import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './component/card.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CardComponent,
   ],
   imports: [
     AppRoutingModule,
